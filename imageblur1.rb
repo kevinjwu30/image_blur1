@@ -1,13 +1,14 @@
 class Image
 
-	def inititalize picture
+	def inititalize (picture)
 		@picture = picture
 	end
 
 	def output_image
-		@picture.each do |image|
+		@picture.each do |data|
+		puts data.join 
 	end
-
+	end
 end
 
 
