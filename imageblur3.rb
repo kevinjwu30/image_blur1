@@ -19,15 +19,20 @@ end
 def blur
 	ones = get_ones
 
- 
+		@picture.each.each_with_index do |row, row_number|
+			row.each_with_index do |item, col_number|
+				ones.each do |found_col_number, found_row_number|
+					@picture[row_number] [col_number] = 0,1
+	end
+end
+end
+	end
 
-
- if row_number == found_row_number && col_number == found_col_number
-              @picture[row_number -1][col_number] = 1 unless row_number == 0 #up
-              @picture[row_number +1][col_number] = 1 unless row_number >= 3 #down
-              @picture[row_number][col_number -1] = 1 unless col_number == 0 #left
-              @picture[row_number][col_number +1] = 1 unless col_number >= 3 #right
-            end
+def distance_image (x1, y1, x2, y2)
+	horizontal_distance = (x2 - x1)
+	vertical_distance = (y2-y1)
+	horizontal_distance+vertical_distance
+end
           end
         end
       end
@@ -57,4 +62,5 @@ puts
 image.blur!
 
 #blurred output
+image_blur! (2)
 image.output_image
